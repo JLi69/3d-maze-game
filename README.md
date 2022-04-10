@@ -37,7 +37,11 @@ To run the program just type `./3d-maze`.
 **NOTE: I wrote this targeted towards Linux so there may be some issues on Windows or MacOS. If you figure out a way to compile the source code on these platforms, please fork the project with the necessary adjustments.**
 
 ## Screenshots
-TBA
+![Screenshot 1](https://github.com/JLi69/3d-maze-game/blob/main/screenshots/Maze-1.png)
+
+![Screenshot 2](https://github.com/JLi69/3d-maze-game/blob/main/screenshots/Maze-2.png)
+
+![Screenshot 3](https://github.com/JLi69/3d-maze-game/blob/main/screenshots/Maze-3.png)
 
 ## Videos
 [Gameplay Video](https://www.youtube.com/watch?v=eIESb0ElVV8)
