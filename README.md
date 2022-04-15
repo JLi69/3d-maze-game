@@ -46,4 +46,4 @@ To run the program just type `./3d-maze`.
 ## Videos
 [Gameplay Video](https://www.youtube.com/watch?v=eIESb0ElVV8)
 
-[Code Explanation (TBA)]()
+[Code Explanation](https://www.youtube.com/watch?v=w4pB5CD2FDo)
