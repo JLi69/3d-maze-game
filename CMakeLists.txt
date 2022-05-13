@@ -14,6 +14,10 @@ add_executable(
 	${PROJECT_SOURCE_DIR}/src/EngineUpdate.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineHandleKeyInput.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineGenerateMaze.cpp
+<<<<<<< HEAD
+=======
+	${PROJECT_SOURCE_DIR}/src/EngineHandleWindowResize.cpp
+>>>>>>> master
 )
 
 target_link_libraries(${PROJECT_NAME}  GL dl glfw)

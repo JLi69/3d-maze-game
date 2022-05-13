@@ -7,10 +7,17 @@ void Engine::Run()
 
 	while(!glfwWindowShouldClose(glWindow))
 	{
+<<<<<<< HEAD
 		std::chrono::time_point start = std::chrono::system_clock::now();
 		Draw(); //Draw the frame
 		Update(); //Update the frame
 		std::chrono::time_point end = std::chrono::system_clock::now();
+=======
+		std::chrono::time_point<std::chrono::system_clock> start = std::chrono::system_clock::now();
+		Draw(); //Draw the frame
+		Update(); //Update the frame
+		std::chrono::time_point<std::chrono::system_clock> end = std::chrono::system_clock::now();
+>>>>>>> master
 		std::chrono::duration<float> duration = end - start;
 		
 		timeToDrawFrame = duration.count(); //Get how long it took to draw/update the frame
@@ -41,7 +48,11 @@ Engine::Engine()
 	//Set up the matrices
 	//Set up the perspective matrix
 	//FOV
+<<<<<<< HEAD
 	const float fov = 60.0f;
+=======
+	const float fov = 75.0f;
+>>>>>>> master
 	//Screen dimensions
 	int width, height;
 	glfwGetWindowSize(glWindow, &width, &height);
@@ -83,6 +94,18 @@ Engine::Engine()
 		static_cast<Engine*>(glfwGetWindowUserPointer(win))->HandleKeyInput(win, key, scancode, action, mods);
 	};
 	glfwSetKeyCallback(glWindow, HandleKeyInputFunc);
+<<<<<<< HEAD
 
 	GenerateMaze();
 }
+=======
+	//Handle window resizing
+	auto HandleResizeFunc = [](GLFWwindow* win, int newWidth, int newHeight)
+	{
+		static_cast<Engine*>(glfwGetWindowUserPointer(win))->HandleWindowResize(win, newWidth, newHeight);
+	};
+	glfwSetWindowSizeCallback(glWindow, HandleResizeFunc);
+
+	GenerateMaze();
+}
+>>>>>>> master

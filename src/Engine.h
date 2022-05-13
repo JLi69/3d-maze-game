@@ -34,9 +34,15 @@ class Engine
 	glm::vec3 exitPos; //Store the position of the exit here
 
 	//Size of the map
+<<<<<<< HEAD
 	const float wallSize = 3.0f;
 	const float mapXSize = 32.0f * wallSize, mapZSize = 32.0f * wallSize;
 	const float playerSpeed = 12.0f, playerRotationSpeed = 2.0f;
+=======
+	const float wallSize = 2.5f;
+	const float mapXSize = 32.0f * wallSize, mapZSize = 32.0f * wallSize;
+	const float playerSpeed = 10.0f, playerRotationSpeed = 1.6f;
+>>>>>>> master
 
 	float theta = 0.0f;
 
@@ -46,6 +52,11 @@ class Engine
 
 	//Handle key input from the user
 	void HandleKeyInput(GLFWwindow* win, int key, int scancode, int action, int mods);
+<<<<<<< HEAD
+=======
+	//Window resizing
+	void HandleWindowResize(GLFWwindow* win, int newWidth, int newHeight);
+>>>>>>> master
 
 	//Read a level file
 	bool ReadLevelFile(std::string filename);
@@ -58,4 +69,8 @@ public:
 
 	//Constructor
 	Engine();
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> master
