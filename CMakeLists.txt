@@ -5,7 +5,7 @@ include_directories(dependencies/include)
 if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
 	set(CMAKE_CXX_FLAGS "-mwindows -O2 -static-libgcc -static-libstdc++")
 else()
-	set(CMAKE_CXX_FLAGS "-O2 -static-ligcc -static-libstdc++")
+	set(CMAKE_CXX_FLAGS "-O2 -static-libgcc -static-libstdc++")
 endif()
 
 project(3d-maze)
