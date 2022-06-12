@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 
 include_directories(dependencies/include)
 
-set(CXX_FLAGS "-O2 -static-libgcc -static-libc++ -mwindows")
+if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
+	set(CXX_FLAGS "-O2 -static-libgcc -static-libc++ -mwindows")
+else()
+	set(CXX_FLAGS "-O2 -static-ligcc -static-libc++")
+endif()
 
 project(3d-maze)
 
