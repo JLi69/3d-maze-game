@@ -48,7 +48,7 @@ void Engine::Update()
 	//Have gravity affect the camera
 	if(cameraPosition.y > 2.5f)
 	{
-		cameraMovement.y -= 0.5f;
+		cameraMovement.y -= 20.0f * timeToDrawFrame;
 	}
 	else if(cameraPosition.y <= 2.5f)
 	{

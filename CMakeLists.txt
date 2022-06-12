@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 
+include_directories(dependencies/include)
+
+set(CXX_FLAGS "-O2 -static-libgcc -static-libc++ -mwindows")
+
 project(3d-maze)
+
+find_package(OpenGL REQUIRED)
 
 add_executable(
 	${PROJECT_NAME} 
@@ -14,10 +20,7 @@ add_executable(
 	${PROJECT_SOURCE_DIR}/src/EngineUpdate.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineHandleKeyInput.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineGenerateMaze.cpp
-<<<<<<< HEAD
-=======
 	${PROJECT_SOURCE_DIR}/src/EngineHandleWindowResize.cpp
->>>>>>> master
 )
 
-target_link_libraries(${PROJECT_NAME}  GL dl glfw)
+target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw3)
