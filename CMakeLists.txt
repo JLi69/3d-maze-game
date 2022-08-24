@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.11)
 
-include_directories(dependencies/include)
+include_directories(include/glfw/include)
+include_directories(include/glm)
+include_directories(include)
 
 if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
 	set(CMAKE_CXX_FLAGS "-mwindows -O2 -static-libgcc -static-libstdc++")
