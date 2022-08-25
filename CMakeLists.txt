@@ -1,18 +1,23 @@
 cmake_minimum_required(VERSION 3.11)
 
 add_subdirectory(include/glad)
-add_custom_target(
-	glad_lib
-	COMMAND cd include/glad && make
-)
 
+include_directories(${CMAKE_BINARY_DIR}/include/glad/include)
 include_directories(include/glfw/include)
 include_directories(include/glm)
 
 if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
 	set(CMAKE_CXX_FLAGS "-mwindows -O2 -static-libgcc -static-libstdc++")
+	add_custom_target(
+		glad_lib
+		COMMAND cd include/glad && mingw32-make
+	)
 else()
 	set(CMAKE_CXX_FLAGS "-O2 -static-libgcc -static-libstdc++")
+	add_custom_target(
+		glad_lib
+		COMMAND cd include/glad && make
+	)
 endif()
 
 project(3d-maze)
