@@ -28,5 +28,4 @@ add_executable(
 	${PROJECT_SOURCE_DIR}/glad/src/glad.c
 	)
 
-target_link_libraries(${PROJECT_NAME} ${CMAKE_BINARY_DIR}/include/glad/libglad.a)
 target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw3)
