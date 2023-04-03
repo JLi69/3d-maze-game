@@ -1,23 +1,12 @@
 cmake_minimum_required(VERSION 3.11)
 
-add_subdirectory(include/glad)
-
 include_directories(${CMAKE_BINARY_DIR}/include/glad/include)
-include_directories(include/glfw/include)
-include_directories(include/glm)
+include_directories(glad/include)
 
 if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
 	set(CMAKE_CXX_FLAGS "-mwindows -O2 -static-libgcc -static-libstdc++")
-	add_custom_target(
-		glad_lib
-		COMMAND cd include/glad && mingw32-make
-	)
 else()
 	set(CMAKE_CXX_FLAGS "-O2 -static-libgcc -static-libstdc++")
-	add_custom_target(
-		glad_lib
-		COMMAND cd include/glad && make
-	)
 endif()
 
 project(3d-maze)
@@ -36,8 +25,8 @@ add_executable(
 	${PROJECT_SOURCE_DIR}/src/EngineHandleKeyInput.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineGenerateMaze.cpp
 	${PROJECT_SOURCE_DIR}/src/EngineHandleWindowResize.cpp
-)
+	${PROJECT_SOURCE_DIR}/glad/src/glad.c
+	)
 
-add_dependencies(${PROJECT_NAME} glad_lib)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_BINARY_DIR}/include/glad/libglad.a)
 target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw3)
