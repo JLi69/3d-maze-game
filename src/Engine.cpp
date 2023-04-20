@@ -27,6 +27,7 @@ Engine::Engine()
 	//Initialize GLFW
 	if(!glfwInit()) exit(-1);
 
+	glfwSwapInterval(1);
 	//Create the window
 	glWindow = glfwCreateWindow(960, 540, "3d maze game", NULL, NULL);
 	if(!glWindow)
